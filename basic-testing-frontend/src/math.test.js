@@ -44,7 +44,7 @@ it('should throw an error if no value is passed into the function', () => {
         add();
     };
 
-    expect(resultFn).toThrow();
+    expect(resultFn).toThrow(/is not iterable/);
 });
 
 it('should throw an error if provided with multiple arguments instead of and array', () => {
@@ -55,5 +55,5 @@ it('should throw an error if provided with multiple arguments instead of and arr
         add(num1, num2);
     };
 
-    expect(resultFn).toThrow();
+    expect(resultFn).toThrow(/is not iterable/);
 });
