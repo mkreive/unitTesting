@@ -8,17 +8,21 @@ afterEach(() => {
     user = new User(testEmail);
 });
 
-it('should update the email', () => {
+describe.concurrent(
+    'concurent anotation veikia, kad testai vienu metu iatliekami tame suite, ir taip pagreiteja viskas'
+);
+
+it.concurrent('should update the email', () => {
     const newTestEmail = 'test2@test.com';
     user.updateEmail(newTestEmail);
     expect(user.email).toBe(newTestEmail);
 });
 
-it('should have an email property', () => {
+it.concurrent('should have an email property', () => {
     expect(user).toHaveProperty('email');
 });
 
-it('should store the provided email value', () => {
+it.concurrent('should store the provided email value', () => {
     expect(user.email).toBe(testEmail);
 });
 
